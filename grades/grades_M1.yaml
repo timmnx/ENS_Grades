@@ -1,0 +1,81 @@
+# First Semester
+FirstSemester:
+  - course: PROJ1
+    title: Research Project 1
+    grade_20: 14
+    max_ects: 5
+  - course: SEM1
+    title: Research Seminar 1
+    ects: 2
+    max_ects: 2
+  - course: XTRA1
+    title: Preparation to Research 1
+    ects: 4
+    max_ects: 4
+  - course: SEA
+    title: Operating Systems
+    grade_20: 11.23
+    max_ects: 5
+  # - course: SOBR
+  #   title: Numeric Sobriety
+  #   grade_20: 20
+  #   max_ects: 3
+  - course: ANG1
+    title: English 1
+    grade_20: 14
+    max_ects: 2
+  - course: THX
+    title: Complexity Theory
+    grade_20: 11.1
+    max_ects: 4
+  - course: HPC
+    title: Parallel programming (<i>MPI</i>)
+    grade_20: 15.5
+    max_ects: 4
+  - course: ACF
+    title: Formal Verification (<i>Isabelle/HOL</i>)
+    grade_20: 17.5
+    max_ects: 4
+
+# Second Semester
+SecondSemester:
+  - course: PROJ2
+    title: Research Project 2
+    grade_20: 15
+    max_ects: 5
+  - course: SEM2
+    title: Research Seminar 2
+    ects: 2
+    max_ects: 2
+  - course: XTRA2
+    title: Preparation to Research 2
+    grade_20: 12.5
+    max_ects: 2
+  - course: ANG2
+    title: English 2
+    grade_20: 16
+    max_ects: 1
+  - course: TI
+    title: Information Theory
+    grade_20: 7.8
+    max_ects: 4
+  - course: GCC
+    title: General compiler concepts
+    grade_20: 12
+    max_ects: 5
+  # - course: EPISTEMO
+  #   title: Epistemology of science
+  #   grade_20: 20
+  #   max_ects: 3
+  - course: MVFA
+    title: Model Checking
+    grade_20: 12.8
+    max_ects: 4
+  - course: PAP
+    title: Automatic Proof of Programs
+    grade_20: 15.7
+    max_ects: 4
+  - course: STAG
+    title: Internship
+    grade_20: 16
+    max_ects: 3

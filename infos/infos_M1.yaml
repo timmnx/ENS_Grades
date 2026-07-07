@@ -1,0 +1,19 @@
+author:
+  gender: Mr
+  name: Martin
+  firstname: QUINSON
+  status: Full Professor
+  field: Computer Science
+  title: Director of the Computer Sciences teaching department
+
+student:
+  gender: Mme
+  name: Alice
+  firstname: BOB
+  pronoun: her
+  dob: 29th of February 2004
+  pob: Paris (FRANCE)
+
+year:
+  schoolyear: 2025-2026
+  yearname: First year of Master's degree in Computer Science,\ncourse "Science Informatique" (SIF)

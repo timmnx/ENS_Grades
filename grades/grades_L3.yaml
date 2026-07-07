@@ -1,0 +1,65 @@
+# First Semester
+FirstSemester:
+  - course: ALG1
+    title: Algorithm 1
+    grade_20: 13.11
+    max_ects: 6
+  - course: FND1
+    title: Formal Languages and Calculability
+    grade_20: 15.5
+    max_ects: 6
+  - course: PRG1
+    title: Functional Programming and OCaml
+    grade_20: 17.4
+    max_ects: 6
+  - course: SYS1
+    title: C Programming, Systems and Networks
+    grade_20: 14.63
+    max_ects: 6
+  - course: ANG1
+    title: English 1
+    grade_20: 15
+    max_ects: 3
+  - course: DIST
+    title: Distributed Algorithm
+    grade_20: 14.9
+    max_ects: 3
+  - course: OPTI
+    title: Optimization and Algebra
+    grade_20: 12
+    max_ects: 0
+
+# Second Semester
+SecondSemester:
+  - course: ALG2
+    title: Algorithm 2
+    grade_20: 12
+    max_ects: 5
+  - course: FND2
+    title: Logic
+    grade_20: 13.67
+    max_ects: 6
+  - course: SYS2
+    title: System Architecture
+    grade_20: 9.5
+    max_ects: 6
+  - course: ANG2
+    title: English 2
+    grade_20: 14
+    max_ects: 2
+  - course: IMG
+    title: Image Processing
+    grade_20: 16
+    max_ects: 3
+  - course: PRG2
+    title: C++ Programming
+    grade_20: 14.25
+    max_ects: 3
+  - course: STAT
+    title: Statistics
+    grade_20: 15
+    max_ects: 3
+  - course: STAG
+    title: Internship
+    grade_20: 16
+    max_ects: 2
