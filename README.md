@@ -90,3 +90,6 @@ There is no need to write the full path and the extension.
 
 # Results
 There are two examples for L3 and M1 grades with fictives grades and informations, and with their respective `pdf`.
+
+# License
+This project is being developed for academic use at ENS Rennes (École Normale Supérieure de Rennes) and is widely inspired from the proposition of Emma REDOR (https://emmaredor.github.io/ens-grades.html), aiming for an easier use thanks to `typst` and `yaml` files.
