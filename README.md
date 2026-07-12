@@ -10,7 +10,9 @@ ENS_Grades/
 ├── grades
 │   └── grades.yaml
 ├── infos
-│   └── infos.yaml
+│   ├── author.yaml
+│   ├── studend.yaml
+│   └── year.yaml
 ├── main.typ
 ...
 ```
@@ -59,8 +61,36 @@ SecondSemester:
   - ...
 ```
 
-## `infos.yaml`
-General informations about the author, the student and the school year. *(see example files)*
+## `author.yaml`
+General informations about the author. At the time of the creatation of the repo it was:
+```yaml
+gender: Mr
+name: Martin
+firstname: QUINSON
+status: Full Professor
+field: Computer Science
+title: Director of the Computer Sciences department
+```
+
+## `student.yaml`
+General informations about the student. A fictive person for the example:
+```yaml
+gender: Mme
+name: Alice
+firstname: BOB
+pronoun: she
+dob: 29th of February 2004
+pob: Paris (FRANCE)
+```
+
+## `year.yaml`
+General informations about the year. For example:
+```yaml
+schoolyear: 2024-2025
+yearname: Third year of Bachelor's degree in Computer Science
+course: SIF
+name: Science Informatique
+```
 
 ## `main.typ`
 The main file is just:
@@ -68,25 +98,31 @@ The main file is just:
 #import "ENS_Grades.typ": doc
 
 #show: doc.with(
-  file_infos: "<infos>",
-  file_grades: "<grades>",
+  file_author: <author>,
+  file_student: <student>,
+  file_year: <year>,
+  file_grades: <grades>
 )
 ```
-where `<infos>` and `<grades>` are just the names for the infos and grades files.
+where `<author>`, `<student>`, `<infos>` and `<grades>` are the paths to the files containing the informations.
 
 *For example:* if we have the following structure:
 ```
 ENS_Grades/
 ├── grades
-│   └── grades_L3.yaml
+│   └── grades.yaml
 ├── infos
-│   └── infos_L3.yaml
+│   ├── author.yaml
+│   ├── studend.yaml
+│   └── year.yaml
 ...
 ```
-- `<grades>` = `grades_L3`
-- `<infos>` = `infos_L3`
+- `<author>` = `infos/author.yaml`
+- `<student>` = `infos/student.yaml`
+- `<year>` = `infos/year.yaml`
+- `<grades>` = `grades/grades.yaml`
 
-There is no need to write the full path and the extension.
+*NB:* those values are those by default, *ie* we can simply do `#show: doc.with()` if the files mentionned above exist.
 
 # Results
 There are two examples for L3 and M1 grades with fictives grades and informations, and with their respective `pdf`.

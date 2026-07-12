@@ -1,19 +1,29 @@
 #let doc(
-  file_infos: "infos_L3",
-  file_grades: "grades_M1",
+  file_author: "infos/author.yaml",
+  file_student: "infos/student.yaml",
+  file_year: "infos/year.yaml",
+  file_grades: "grades/grades.yaml",
   body,
 ) = {
   set page(
     paper: "a4",
-    margin: 1cm,
+    margin: 2cm,
+    footer: text(gray, 7pt)[
+      École normale supérieure de Rennes
+
+      Campus de Ker lann, 11 Av. Robert Schuman, 35170 Bruz
+
+      +33 (0)2 99 05 93 00
+    ],
   )
 
   set par(justify: true)
-  set text(font: "Helvetica", weight: "medium", 10pt)
+  set text(font: "Helvetica", weight: "medium", 9pt)
 
-  let infos = yaml("infos/"+file_infos+".yaml")
-
-  let grades = yaml("grades/"+file_grades+".yaml")
+  let author = yaml(file_author)
+  let student = yaml(file_student)
+  let year = yaml(file_year)
+  let grades = yaml(file_grades)
 
   let get(x) = text(rgb(63, 82, 160), x)
 
@@ -163,15 +173,16 @@
     box[
       #align(center)[
         #title[Transcript of academic record]
-        *#infos.year.yearname.replace("\\n", "\n")*
+        *#year.yearname\ Course "#year.name" (#year.course)*
       ]
     ],
   )
 
-  [#get(infos.student.gender) #get(infos.student.name) #get(infos.student.firstname), born on the #get(infos.student.dob), in #get(infos.student.pob), studied at the École normale supérieure de Rennes (Bruz, France) in #get(infos.year.schoolyear) where he attended and passed the following courses:]
+  [#get(student.gender) #get(student.name) #get(student.firstname), born on the #get(student.dob), in #get(student.pob), studied at the _École normale supérieure de Rennes_ (Bruz, France) in #get(year.schoolyear) where #get(student.pronoun) attended and passed the following courses:]
 
   let (show_star, computed_grades) = compute(grades)
 
+  show table: set text(8pt)
   show table.cell.where(y: 0): strong
   show table.cell.where(y: computed_grades.len() - 1): strong
 
@@ -196,9 +207,14 @@
   )
 
   [
-    #if show_star [_\*This course unit is not validated (ECTS credits not awarded). The academic year is validated by compensation, on
-    the basis of the overall average grade._]
-    NB: École normale supérieure de Rennes is one of the most selective French higher education institutions in science and humanities. Students entering ENS are selected from the upper tier of classes préparatoires and universities and ranked in the top 1-5% among French students.
+    #if show_star {
+      text(
+        size: 7pt,
+      )[_\*This course unit is not validated (ECTS credits not awarded). The academic year is validated by compensation, on
+      the basis of the overall average grade._]
+    }
+
+    _NB:_ _École normale supérieure de Rennes_ is one of the most selective French higher education institutions in science and humanities. Students entering ENS are selected from the upper tier of classes préparatoires and universities and ranked in the top 1-5% among French students.
 
     ENS follows the traditional French grading system based on a numbered scale from 0 to 20, 10 being the minimum passing grade. Grades given at our department correspond to the following:
     - 16-20: Outstanding
@@ -209,13 +225,13 @@
 
     Typical class average lies between 12 and 14/20 and grades above 16 are seldom awarded.
 
-    I, #get(infos.author.gender) #get(infos.author.name) #get(infos.author.firstname), #get(infos.author.status) in #get(infos.author.field), #get(infos.author.title), hereby certify that the translation of the transcripts obtained by #get(infos.student.gender) #get(infos.student.name) #get(infos.student.firstname) is true to the original.
+    I, #get(author.gender) #get(author.name) #get(author.firstname), #get(author.status) in #get(author.field), #get(author.title), hereby certify that the translation of the transcripts obtained by #get(student.gender) #get(student.name) #get(student.firstname) is true to the original.
 
     #datetime.today().display("[month repr:long] [day], [year]")]
 
-  place(bottom, text(gray, 6pt)[
-    École normale supérieure de Rennes\
-    Campus de Ker lann, 11 Av. Robert Schuman, 35170 Bruz\
-    +33 (0)2 99 05 93 00
-  ])
+  // place(bottom, text(gray, 6pt)[
+  //   École normale supérieure de Rennes\
+  //   Campus de Ker lann, 11 Av. Robert Schuman, 35170 Bruz\
+  //   +33 (0)2 99 05 93 00
+  // ])
 }
